@@ -63,11 +63,10 @@ int main(int argc, char *argv[]) {
       logMessage("Resposta recebida");
       logMessage(concat("Recebido: ", clientReply));
 
-      message = concat("Mensagem recebida com sucesso! Para sair digite:\n- ", QUIT);
+      message =
+          concat("Mensagem recebida com sucesso! Para sair digite:\n- ", QUIT);
       write(newSocket, message, strlen(message));
     } while (strcmp(clientReply, QUIT) != 0);
-
-    write(newSocket, message, strlen(message));
   }
 
   if (newSocket < 0) {
